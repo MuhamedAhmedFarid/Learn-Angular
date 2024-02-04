@@ -1,0 +1,69 @@
+<div class="flex space-x-4 items-center ml-10 " (mouseleave)="hideDropdowns()">
+  <div class="w-72 mr-40">
+    <div class="relative w-full min-w-[200px] h-10">
+      <input disabled
+        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-2 transition-all border placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-solid border-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[6px] border-blue-gray-200 focus:border-gray-900"
+        placeholder="Search..." />
+    </div>
+  </div>
+
+
+
+  <!-- tabs -->
+  <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+    <li class="relative me-2 mr-7" (mouseover)="showDropdown = true">
+      <a class="pointer-cursor inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        style="width: 79px; height: 29px; border-radius: 5px; background-color: #D9D9D9; display: flex; align-items: center; justify-content: center;">Type</a>
+      <div *ngIf="showDropdown"
+        class="origin-bottom-left absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-gray-300 ring-1 ring-gray-300 ring-opacity-5">
+        <div class="py-1">
+          <!-- Use ngFor to dynamically generate options based on animalTypes -->
+          <a *ngFor="let animalType of animalTypes" (click)="selectAnimalType(animalType.name)"
+            class="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white rounded-t-md pointer-cursor">{{
+            animalType.name }}</a>
+        </div>
+      </div>
+    </li>
+    <li class="relative me-2 mr-7" (mouseenter)="showDropdownColors = true">
+      <a class="pointer-cursor inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        style="width: 79px; height: 29px; border-radius: 5px; background-color: #D9D9D9; display: flex; align-items: center; justify-content: center;">Color</a>
+      <div *ngIf="showDropdownColors"
+        class="origin-bottom-left absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-gray-300 ring-1 ring-gray-300 ring-opacity-5">
+        <div class="py-1">
+          <a *ngFor="let color of colors" (click)="selectAnimalColor(color)"
+            class="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white rounded-t-md pointer-cursor">{{
+            color }}</a>
+        </div>
+      </div>
+    </li>
+    <li class="relative me-2 mr-7" (mouseenter)="showDropdownGender = true">
+      <a class="pointer-cursor inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        style="width: 79px; height: 29px; border-radius: 5px; background-color: #D9D9D9; display: flex; align-items: center; justify-content: center;">Gender</a>
+      <div *ngIf="showDropdownGender"
+        class="origin-bottom-left absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-gray-300 ring-1 ring-gray-300 ring-opacity-5">
+        <div class="py-1">
+          <a *ngFor="let gender of genders" (click)="selectAnimalGender(gender)"
+            class="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white rounded-t-md pointer-cursor">{{
+            gender }}</a>
+        </div>
+      </div>
+    </li>
+
+
+    <!-- Breed Dropdown -->
+    <li class="relative me-2 mr-7" (mouseenter)="showDropdownBreed = true">
+      <a class="pointer-cursor inline-block px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        style="width: 79px; height: 29px; border-radius: 5px; background-color: #D9D9D9; display: flex; align-items: center; justify-content: center;">Breed</a>
+      <!-- Dropdown for Tab 1 -->
+      <div *ngIf="showDropdownBreed"
+        class="origin-bottom-left absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-gray-300 ring-1 ring-gray-300 ring-opacity-5">
+        <div class="py-1">
+          <a *ngFor="let breed of breeds; let i = index"
+            (click)="getGivenAnimals.emit({ type: '', color: '', gender: '', breed: breed.name })"
+            class="block px-4 py-2 text-sm text-black hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white rounded-t-md pointer-cursor">hell {{ breed.name }}</a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</div>

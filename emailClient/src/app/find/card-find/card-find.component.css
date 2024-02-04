@@ -1,0 +1,38 @@
+/* styles.css */
+/* .custom-container {
+  @apply  w-96 h-24 border-opacity-25 border border-black rounded-md;
+} */
+
+.container{
+  width:
+  967px;
+  height:
+  238px;
+
+  border: solid 0.5px gray;
+  /* position: relative; */
+  border-radius: 10px;
+  /* left: 260px;
+  top: 120px; */
+  margin-top: 45px;
+}
+
+.buttons{
+  margin-bottom: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 13rem;
+  margin-right: 10rem;
+}
+/* .text{
+  position: absolute;
+  top: 47%;
+  left: 55%;
+} */
+.text{
+  color: blue;
+  font-size: 30xp;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,0 +1,10 @@
+<div class="ml-80">
+  @if (animalTotal) {
+    <app-card *ngFor="let animal of animals" (removeAnimalFromAdoption)="removeAnimalFromAdoption(animal)" [buttonToggle]="buttonToggle" [age]="animal.age" [url]="animal.photos[0]?.full" [name]="animal.name"
+      [gender]="animal.gender" [size]="animal.size" [type]="animal.type">
+    </app-card>
+  }@else {
+    <h1>No Adoption have been added.</h1>
+
+  }
+</div>

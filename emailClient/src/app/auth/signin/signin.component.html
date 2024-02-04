@@ -1,0 +1,19 @@
+<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+  Sign In
+</h1>
+
+<form (ngSubmit)="onSubmit()" class="max-w-sm mx-auto" [formGroup]="authForm">
+
+  <app-input label="user name" textType="text" [control]="authForm.get('username')" [placeholder]="'User name'"></app-input>
+  <app-input label="Password" textType="password" [control]="authForm.get('password')" [placeholder]="'Password'"></app-input>
+  <div *ngIf="authForm.errors" class="ui red basic label">
+    <p *ngIf="authForm.errors?.['credential']">
+      Invalid username or password
+    </p>
+  </div>
+
+  <div>
+    <button type="submit" class="text-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+  </div>
+
+</form>

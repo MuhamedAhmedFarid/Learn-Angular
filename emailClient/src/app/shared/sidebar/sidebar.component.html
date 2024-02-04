@@ -1,0 +1,67 @@
+
+
+
+
+<aside [ngClass]="{'none': !showSidebar}" id="logo-sidebar"
+  class="fixed top-0 left-0 z-40 w-55 h-screen pt-20 transition-transform -translate-x-full bg-gray-300 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+  aria-label="Sidebar">
+  <div class="mb-8 ">
+    <p class="text-center text-lg font-bold ">Welcome,</p>
+  </div>
+  <div class="h-full px-3 pb-4 overflow-y-auto bg-gray-300 dark:bg-gray-800">
+    <ul class="space-y-2 font-medium">
+      <li>
+        <a routerLink="/settings"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <fa-icon
+            class="fa fa-bars text-gray-500 text-lg w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            [icon]="icon1"></fa-icon>
+          <span class="ms-3 text-lg">Settings</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/search"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <fa-icon
+            class="fa fa-bars text-lg text-gray-500 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            [icon]="icon2"></fa-icon>
+
+          <span class="ms-3 text-lg">Find Pets</span>
+        </a>
+      </li>
+
+      <li>
+
+        <a routerLink="/favorites"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <fa-icon
+            class="fa fa-bars text-lg text-gray-500 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            [icon]="icon3"></fa-icon>
+          <span class="ms-3 text-lg">My Favourites</span>
+          <span
+            class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-white bg-red-400 rounded-full">
+            {{ itemNumber }}
+          </span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/adopted"
+          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <fa-icon
+            class="fa fa-bars text-lg text-gray-500 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            [icon]="icon4"></fa-icon>
+          <span class="ms-3 text-lg">My adopted pets</span>
+          <span
+            class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-white bg-red-400 rounded-full">
+            {{ adoptNumber }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex justify-center mt-4 absolute bottom-10 w-full">
+    <button (click)="onSignOut()" class="px-4 py-2 text-lg font-semibold text-black bg-transparent ">
+      Logout
+    </button>
+  </div>
+</aside>

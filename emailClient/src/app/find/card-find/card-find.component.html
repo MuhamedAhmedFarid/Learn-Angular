@@ -1,0 +1,31 @@
+
+  @if (animals) {
+      @for (animal of animals; track $index) {
+        <app-card
+        (addToFave)="addToFavorites(animal)"
+        (addForAdo)="addToAdotption(animal)"
+        (removeFromFavorite)="removeFromFavorite(animal)"
+        (removeAnimalFavorite)="getRidOfIt(animal)"
+        (removeAnimalFromAdoption)="removeAnimalFromAdoption.emit(animal)"
+        (removeAnimalFromFavorite)="removeAnimalFromFavorite.emit(animal)"
+        [toggle]="toggle"
+        [buttonToggle]="buttonToggle"
+        [size]="animal.size"
+        [age]="animal.age"
+        [url]="animal.primary_photo_cropped?.full"
+        [breed]="animal.breeds.primary"
+        [type]="animal.type"
+        [name]="animal.name"
+        [pupleshed]="animal.published_at"
+        [id]="animal.id"
+      ></app-card>
+      }
+  }@else {
+      <p>Loading...</p>
+  }
+  <!-- Display animals if available -->
+
+
+<!-- Loading message -->
+
+

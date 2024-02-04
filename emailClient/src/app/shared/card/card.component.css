@@ -1,0 +1,82 @@
+.block{
+  width: 900px;
+  height: 230px;
+  border: solid 0.5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box-shadow property */
+
+}
+.inner-div{
+  padding: 25px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+.img-container{
+  width: 240px;
+  height: 187px;
+  margin-right: 3rem;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+   object-fit: cover;
+
+}
+.content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.texts{
+  width: 150px;
+  height: 126px;
+
+}
+.text{
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.buttons-content{
+  display: flex;
+  margin-bottom: 5rem;
+  margin-left: 60px;
+
+}
+.button-content-right{
+  width: 73px;
+  height: 29px;
+  border-radius: 5px;
+  margin-right: 20px;
+  align-items: center;
+  background-color: #E2E2E2;
+
+}
+.button-content-left{
+  width: 73px;
+  height: 29px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #F4BCBC;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+ /* Align items to the bottom */
+  margin-top: auto; /* Push the buttons to the bottom */
+}
+
+.left-button{
+  width: 145px;
+  height: 42px;
+  border-radius: 5px;
+  background-color: #F4BCBC;
+  margin-right: 15px;
+}

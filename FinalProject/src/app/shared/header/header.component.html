@@ -1,0 +1,49 @@
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Final Project</h1>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+<p>
+  <mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon >menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [style.width.px]="300" class="custom-sidenav">
+    <mat-nav-list >
+      <a mat-list-item routerLink="settings">Settings</a>
+      <a mat-list-item  routerLink="pets">Find pets</a>
+      <a mat-list-item routerLink="/favorite">My favorites</a>
+      <a mat-list-item>My adopted pets</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <!-- Your content here -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>

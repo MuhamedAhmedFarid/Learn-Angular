@@ -1,0 +1,40 @@
+.container {
+  padding-left: 8%;
+  padding-right: 6%;
+  box-sizing: border-box;
+}
+
+.navbar {
+  height: 12%;
+  display: flex;
+  align-items: center;
+  position: relative; /* Add this line */
+}
+
+nav {
+  position: absolute;
+  right: 0; /* Adjust the positioning as per your requirements */
+  top: 18px; /* Adjust the positioning as per your requirements */
+}
+
+nav ul {
+  list-style: none; /* Add this line */
+  margin: 0; /* Add this line */
+  padding: 0; /* Add this line */
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.fa-icon {
+  font-size: 24px;
+  color: #676767;
+  padding: 10px 0;
+  margin-left: 10px; /* Adjust the spacing as per your requirements */
+}

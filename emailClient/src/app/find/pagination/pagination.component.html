@@ -1,0 +1,22 @@
+<!-- <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="isFirstPage">
+      <a class="page-link" href="#" (click)="previousPage($event)">Previous</a>
+    </li>
+    <li class="page-item" [class.active]="currentPage === pageNumber" *ngFor="let pageNumber of getPages()">
+      <a class="page-link" href="#" (click)="goToPage(pageNumber)">{{ pageNumber }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="isLastPage">
+      <a class="page-link" href="#" (click)="nextPage($event)">Next</a>
+    </li>
+  </ul>
+</nav> -->
+<ul class="pagination">
+  <li *ngFor="let page of pages"
+    (click)="changePage.emit(page)"
+    [ngClass]="{'page-item': true, active: currentPage === page}">
+    <span class="page-link">
+      {{ page }}
+    </span>
+  </li>
+</ul>

@@ -1,0 +1,35 @@
+<div>
+    @if (!(signedin$ | async)) {
+      <div class="text-sm font-medium text-center text-gray-500">
+        <ul class="flex flex-wrap -mb-px justify-end">
+          <li class="me-2">
+            <a [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="['active']"
+              class="inline-block p-4" (click)="isSignUpActive = false" aria-current="page">Sign In</a>
+          </li>
+          <li class="me-2">
+            <a [routerLink]="['/signup']" [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="['active']"
+              class="inline-block p-4" (click)="isSignUpActive = true" aria-current="page">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    }
+
+    @if (signedin$ | async) {
+      <app-sidebar></app-sidebar>
+    <div class="header-container">
+      <app-header></app-header>
+    </div>
+    }
+
+
+
+
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+<!-- </div> -->

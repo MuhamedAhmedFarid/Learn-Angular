@@ -1,0 +1,33 @@
+<section class="text-gray-400 bg-gray-900 body-font">
+  <div class="container mx-auto">
+    <div class="flex items-center">
+      <label class="mr-2" for="">Categories:</label>
+      <select class="form-select mt-1 rounded-md bg-gray-300 border-gray-300 text-gray-900">
+        <option value="1">option 1</option>
+        <option value="2">option 2</option>
+        <option value="3">option 3</option>
+        <option value="4">option 4</option>
+      </select>
+    </div>
+  </div>
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full" *ngFor="let item of products">
+        <button class="block relative h-48 rounded overflow-hidden hover:bg-gray-800 focus:bg-gray-800" type="button">
+          <img alt="ecommerce" class="object-cover object-center w-full h-full block" [src]="item.image" >
+        </button>
+        <div class="mt-4">
+          <!-- <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> -->
+          <h2 class="text-white title-font text-lg font-medium">{{ item.title }}</h2>
+          <p class="mt-1">{{ item.description }}</p>
+          <p class="mt-1">${{ item.price }}</p>
+        </div>
+      </div>
+
+
+
+
+      <!-- Add similar changes to the other card elements -->
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+<!-- <div class="w-40 h-60 mb-10 ">
+  <div class="container p-6 ">
+    <div class="max-w-sm w-full  lg:max-w-full lg:flex">
+      <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+        <img [src]="url" height="30px" class="" />
+      </div>
+       <div class="ml-10">
+        <p class="text-lg mt-3 mb-4 text-gray-600">Type: {{ type }}</p>
+        <p class="text-lg mb-4  text-gray-600">Name: {{ name}}</p>
+        <p class="text-lg mb-4 text-gray-600">Breed: Syami</p>
+        <p class="text-lg mb-4 text-gray-600">Age: {{ age }}</p>
+       </div>
+
+         <div class="flex justify-center ml-40 mt-4 w-12 h-10">
+          <button class="bg-ping  bg-pink-300 text-white px-4 py-2 mr-2 rounded">cute</button>
+          <button class="bg-gray-400 ml-5 text-white px-4 py-2 rounded"> {{size}} </button>
+        </div>
+        <p class="text">Published at: Dec 03, 2019</p>
+    </div>
+    <div class="flex justify-end items-center  buttons">
+      <button class="bg-pink-300 text-white px-4 py-2 mr-2 rounded">Adop Me</button>
+      <button [class]="isPink ? 'text-pink-300' : 'text-gray-300'" (click)="isPink = !isPink">
+        <fa-icon
+          class="fa fa-bars text-xl w-6 h-6 transition duration-75 dark:text-ping-300 ml-5 group-hover:text-gray-900 dark:group-hover:text-pink-300"
+          [icon]="icon"
+        ></fa-icon>
+      </button>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="block">
+  <div class="inner-div">
+    <div class="img-container">
+      <img [src]="url" class="img" />
+    </div>
+    <div class="content">
+      <div class="texts">
+        <p class="text">Type: {{ type }}</p>
+        <p class="text">name: {{ name }}</p>
+        <p class="text">Breed: {{ breed }}</p>
+        <p class="text">Age: {{ age }}</p>
+      </div>
+      <div class="buttons-content">
+        <button class="button-content-right">cute</button>
+        <button class="button-content-left">{{size}}</button>
+      </div>
+      <div class="buttons">
+        <!-- <button class="left-button" (click)="addForAdoption()">{{ buttonToggle ? 'Adopt me' : 'Unadopt' }}</button> -->
+        @if(buttonToggle) {
+          <button class="left-button" (click)="addForAdoption()">Adopt me</button>
+        }@else {
+          <button class="left-button" (click)="removeFromAdoption()">Unadopt</button>
+        }
+        @if (!toggle) {
+          <button (click)="addToFavorites()" class="text-gray-300">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
+              </path>
+            </svg>
+          </button>
+        }@else {
+          <button (click)="gitRidOfIt()" class="text-pink-300" >
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
+              </path>
+            </svg>
+          </button>
+        }
+
+
+      </div>
+    </div>
+  </div>
+</div>

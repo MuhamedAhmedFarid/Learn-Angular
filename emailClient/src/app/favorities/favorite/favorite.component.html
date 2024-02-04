@@ -1,0 +1,12 @@
+<div class="ml-80">
+  @if (animalTotal) {
+    <div>
+      <app-card *ngFor="let animal of animals"  [age]="animal.age" (removeAnimalFromFavorite)="removeAnimalFromFavorite(animal)" [url]="animal.photos[0]?.full" [name]="animal.name" [gender]="animal.gender" [size]="animal.size" [type]="animal.type" [toggle]="toggle">
+      </app-card>
+    </div>
+  }@else {
+  <h1>No Favorites have been added.</h1>
+
+  }
+</div>
+

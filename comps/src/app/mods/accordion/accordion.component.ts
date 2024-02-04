@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AccordionComponent {
 
-  @Input() items: {title : string, content: string} []= []
+  @Input() items: any = []
 
   openedItemIndex = 0
   onClick(index: number) {

@@ -1,0 +1,21 @@
+<div class="ml-80">
+<app-header-find [animals]="animals"  (getGivenAnimals)="getGivenAnimals($event.type, $event.color, $event.gender, $event.breed)"
+></app-header-find>
+@if(!loading) {
+<app-card-find [animals]="animals" [toggle]="toggle" [buttonToggle]="buttonToggle"></app-card-find>
+<app-pagination [currentPage]="currentPage" [limit]="10" [total]="500"
+  (changePage)="changePage($event)"></app-pagination>
+}@else {
+<div class="spinner">
+  <app-spinner></app-spinner>
+</div>
+}
+</div>
+
+<!-- <app-pagination [countPerPage]="countPerPage" [currentPage]="currentPage" [totalCount]="totalCount" [totalPages]="totalPages" (changePage)="changePage($event)"></app-pagination> -->
+<!-- <app-pagination
+[currentPage]="currentPage"
+[limit]="10"
+[total]="totalItemsCount"
+(changePage)="changePage($event)">
+</app-pagination> -->
